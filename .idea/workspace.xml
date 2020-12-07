@@ -2,6 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="673a45fe-9c16-44b2-8a98-e2b08a2ae1de" name="Default Changelist" comment="31 urok">
+      <change afterPath="$PROJECT_DIR$/components/Admin/AdminPostForm.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Posts/PostList.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/UI/AppButton.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/UI/AppControlInput.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/admin.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/error.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/admin/_postId/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/admin/auth/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/admin/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/admin/new-post/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Posts/PostPreview.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/Posts/PostPreview.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/posts/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/posts/index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,6 +63,7 @@
       <recent name="C:\Users\eerzh\Documents\work\sites\pages-views-01-dynamic-param\assets\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/components/UI" />
       <recent name="C:\Users\eerzh\Documents\work\sites\pages-views-01-dynamic-param\components\Navigation" />
     </key>
   </component>
@@ -64,6 +78,7 @@
       <workItem from="1607191317934" duration="2036000" />
       <workItem from="1607262778596" duration="468000" />
       <workItem from="1607263548573" duration="11993000" />
+      <workItem from="1607326121514" duration="6234000" />
     </task>
     <task id="LOCAL-00001" summary="29 urok">
       <created>1607272573988</created>
@@ -102,6 +117,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="29 urok" />

@@ -3,27 +3,14 @@
     <section class="intro">
       <h1>Get the latest tech news!</h1>
     </section>
-    <section class="featured-posts">
-      <PostPreview id="1"
-                   title="Hello there!"
-                   previewText="This is my first post!"
-                   thumbnail="https://easyhonestfinancial.com/wp-content/uploads/2019/01/TECH.jpg"/>
-      <PostPreview id="2"
-                   title="Hello there - the second time!"
-                   previewText="This is my second post!"
-                   thumbnail="https://easyhonestfinancial.com/wp-content/uploads/2019/01/TECH.jpg"/>
-      <PostPreview id="3"
-                   title="Hi!"
-                   previewText="This is my third post!"
-                   thumbnail="https://easyhonestfinancial.com/wp-content/uploads/2019/01/TECH.jpg"/>
-    </section>
+    <PostList />
   </div>
 </template>
 
 <script>
-import PostPreview from "../components/Posts/PostPreview";
+import PostList from "../components/Posts/PostList";
 export default {
-  components: {PostPreview}
+  components: {PostList}
 }
 </script>
 
@@ -57,15 +44,6 @@ export default {
   .intro h1 {
     font-size: 2rem;
   }
-}
-
-.featured-posts {
-  display: flex;
-  padding: 20px;
-  box-sizing: border-box;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
 }
 </style>
 
