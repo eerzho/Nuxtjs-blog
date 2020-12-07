@@ -3,14 +3,31 @@
     <section class="intro">
       <h1>Get the latest tech news!</h1>
     </section>
-    <PostList />
+    <PostList :posts="loadedPosts" />
   </div>
 </template>
 
 <script>
 import PostList from "../components/Posts/PostList";
 export default {
-  components: {PostList}
+  components: {PostList},
+  data() {
+    return {
+      loadedPosts: [
+        {
+          id: '1',
+          title: 'First Post',
+          previewText: 'This is our first post!',
+          thumbnail: 'https://m.buro247.kz/thumb/750x500_5/local/images/buro/new/high-tech-low-life-ili-kiberpank.gif'
+        }, {
+          id: '2',
+          title: 'Second Post',
+          previewText: 'This is our second post!',
+          thumbnail: 'https://m.buro247.kz/thumb/750x500_5/local/images/buro/new/high-tech-low-life-ili-kiberpank.gif'
+        }
+      ]
+    }
+  }
 }
 </script>
 
