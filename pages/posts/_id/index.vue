@@ -15,22 +15,29 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: "index",
-  asyncData(context, callback) {
-    setTimeout(() => {
-      callback(null, {
-        loadedPost: {
-          id: '1',
-          title: 'First Post (ID:' + context.params.id + ')',
-          previewText: 'This is our first post!',
-          author: 'Zhanbolat',
-          updatedDate: new Date(),
-          content: 'Some dummy text which is definitely not the preview text the  though!',
-          thumbnail: 'https://m.buro247.kz/thumb/750x500_5/local/images/buro/new/high-tech-low-life-ili-kiberpank.gif'
+  asyncData(context) {
+    return axios.get('https://nuxtjs-blog-55a0d-default-rtdb.firebaseio.com/posts/' + context.params.id + '.json')
+      .then(res => {
+        return {
+          loadedPost: res.data,
         }
-      })
-    },1000)
+      }).catch(e => context.error(e));
+    // setTimeout(() => {
+    //   callback(null, {
+    //     loadedPost: {
+    //       id: '1',
+    //       title: 'First Post (ID:' + context.params.id + ')',
+    //       previewText: 'This is our first post!',
+    //       author: 'Zhanbolat',
+    //       updatedDate: new Date(),
+    //       content: 'Some dummy text which is definitely not the preview text the  though!',
+    //       thumbnail: 'https://m.buro247.kz/thumb/750x500_5/local/images/buro/new/high-tech-low-life-ili-kiberpank.gif'
+    //     }
+    //   })
+    // },1000)
   }
 }
 </script>

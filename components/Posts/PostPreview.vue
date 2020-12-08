@@ -6,6 +6,7 @@
       <div class="post-content">
         <h1>{{title}}</h1>
         <p>{{previewText}}</p>
+        <p v-show="isAdmin">Admin</p>
       </div>
     </article>
   </nuxt-link>
