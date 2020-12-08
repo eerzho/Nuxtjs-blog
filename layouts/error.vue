@@ -7,8 +7,8 @@
 
 <script>
 export default {
-  name: "error"
-}
+  name: 'error',
+};
 </script>
 
 <style scoped>

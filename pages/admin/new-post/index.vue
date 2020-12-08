@@ -1,28 +1,28 @@
 <template>
-<div class="admin-new-post-page">
-  <section class="new-post-form">
-    <AdminPostForm @submit="onSubmitted"/>
-  </section>
-</div>
+  <div class="admin-new-post-page">
+    <section class="new-post-form">
+      <AdminPostForm @submit="onSubmitted"/>
+    </section>
+  </div>
 </template>
 
 <script>
 import axios from 'axios';
-import AdminPostForm from "../../../components/Admin/AdminPostForm";
+import AdminPostForm from '../../../components/Admin/AdminPostForm';
+
 export default {
-  name: "index",
+  name: 'index',
   layout: 'admin',
   components: {AdminPostForm},
   methods: {
     onSubmitted(postData) {
       axios.post('https://nuxtjs-blog-55a0d-default-rtdb.firebaseio.com/posts.json', {
-          ...postData,
-          updatedDate: new Date()
-        }).then(result => console.log(result))
-        .catch(e => console.log(e));
-    }
-  }
-}
+        ...postData,
+        updatedDate: new Date(),
+      }).then(result => console.log(result)).catch(e => console.log(e));
+    },
+  },
+};
 </script>
 
 <style scoped>

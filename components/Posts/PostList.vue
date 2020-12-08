@@ -11,9 +11,10 @@
 </template>
 
 <script>
-import PostPreview from "../../components/Posts/PostPreview";
+import PostPreview from '../../components/Posts/PostPreview';
+
 export default {
-name: "PostList",
+  name: 'PostList',
   components: {PostPreview},
   props: {
     isAdmin: {
@@ -23,9 +24,9 @@ name: "PostList",
     posts: {
       type: Array,
       required: false,
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped>

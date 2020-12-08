@@ -1,30 +1,31 @@
 <template>
-<div class="single-post-page">
-  <section class="post">
-    <h1 class="post-title">{{loadedPost.title}}</h1>
-    <div class="post-details">
-      <div class="post-detail">Last updated on {{loadedPost.updatedDate}}</div>
-      <div class="post-detail">Written by {{loadedPost.author}}</div>
-    </div>
-    <p>{{loadedPost.content}}</p>
-  </section>
-  <section class="post-feedback">
-    <p> Let my know what you think about the post, send a mail to <a href="mailto:eerzho@gmail.com">eerzho@gmail.com</a></p>
-  </section>
-</div>
+  <div class="single-post-page">
+    <section class="post">
+      <h1 class="post-title">{{ loadedPost.title }}</h1>
+      <div class="post-details">
+        <div class="post-detail">Last updated on {{ loadedPost.updatedDate }}</div>
+        <div class="post-detail">Written by {{ loadedPost.author }}</div>
+      </div>
+      <p>{{ loadedPost.content }}</p>
+    </section>
+    <section class="post-feedback">
+      <p> Let my know what you think about the post, send a mail to <a
+          href="mailto:eerzho@gmail.com">eerzho@gmail.com</a></p>
+    </section>
+  </div>
 </template>
 
 <script>
-import axios from "axios";
+import axios from 'axios';
+
 export default {
-  name: "index",
+  name: 'index',
   asyncData(context) {
-    return axios.get('https://nuxtjs-blog-55a0d-default-rtdb.firebaseio.com/posts/' + context.params.id + '.json')
-      .then(res => {
-        return {
-          loadedPost: res.data,
-        }
-      }).catch(e => context.error(e));
+    return axios.get('https://nuxtjs-blog-55a0d-default-rtdb.firebaseio.com/posts/' + context.params.id + '.json').then(res => {
+      return {
+        loadedPost: res.data,
+      };
+    }).catch(e => context.error(e));
     // setTimeout(() => {
     //   callback(null, {
     //     loadedPost: {
@@ -38,8 +39,8 @@ export default {
     //     }
     //   })
     // },1000)
-  }
-}
+  },
+};
 </script>
 
 <style scoped>
