@@ -13,9 +13,16 @@
 <script>
 import AppControlInput from "../UI/AppControlInput";
 import AppButton from "../UI/AppButton";
+
 export default {
 name: "AdminPostForm",
   components: {AppButton, AppControlInput},
+  props: {
+    post: {
+      type: Object,
+      required: false,
+    }
+  },
   data() {
     return {
       editedPost: this.post
