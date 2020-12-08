@@ -17,13 +17,15 @@ export default {
   asyncData(context) {
     return axios.get('https://nuxtjs-blog-55a0d-default-rtdb.firebaseio.com/posts/' + context.params.postId + '.json').then(res => {
       return {
-        loadedPost: res.data,
+        loadedPost: {...res.data, id: context.params.postId},
       };
     }).catch(e => context.error(e));
   },
   methods: {
     onSubmitted(editedPost) {
-      axios.put('https://nuxtjs-blog-55a0d-default-rtdb.firebaseio.com/posts/' + this.$route.params.postId + '.json', editedPost).then(res => console.log(res)).catch(e => console.log(e));
+      this.$store.dispatch('editPost', editedPost).then(() => {
+        this.$router.push('/admin');
+      })
     },
   },
 };

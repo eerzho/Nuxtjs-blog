@@ -10,6 +10,13 @@ const createStore = () => {
       setPosts(state, posts) {
         state.loadedPosts = posts;
       },
+      addPost(state, post) {
+        state.loadedPosts.push(post);
+      },
+      editPost(state, editedPost) {
+        const postIndex = state.loadedPosts.findIndex(post => post.id === editedPost.id);
+        state.loadedPosts[postIndex] = editedPost;
+      }
     },
     actions: {
       nuxtServerInit(vuexContext, context) {
@@ -21,28 +28,26 @@ const createStore = () => {
           }
           vuexContext.commit('setPosts', postsArray);
         }).catch(e => context.error(e));
-        // if (!process.client) {
-        //   console.log(context.req.session);
-        // }
-        // return new Promise((resolve, reject) => {
-        //   setTimeout(() => {
-        //     vuexContext.commit('setPosts', [
-        //         {
-        //           id: '1',
-        //           title: 'First Post',
-        //           previewText: 'This is our first post!',
-        //           thumbnail: 'https://m.buro247.kz/thumb/750x500_5/local/images/buro/new/high-tech-low-life-ili-kiberpank.gif'
-        //         }, {
-        //           id: '2',
-        //           title: 'Second Post',
-        //           previewText: 'This is our second post!',
-        //           thumbnail: 'https://m.buro247.kz/thumb/750x500_5/local/images/buro/new/high-tech-low-life-ili-kiberpank.gif'
-        //         }
-        //       ])
-        //     resolve()
-        //   }, 1500)
-        //   // reject(new Error());
-        // })
+      },
+      addPost(vuexContext, post) {
+        const createdPost = {
+          ...post,
+          updatedDate: new Date()
+        };
+        return axios
+        .post('https://nuxtjs-blog-55a0d-default-rtdb.firebaseio.com/posts.json', createdPost)
+        .then(result => {
+          vuexContext.commit('addPost', {...createdPost, id: result.data.name});
+        }).catch(e => console.log(e));
+      },
+      editPost(vuexContext, editedPost) {
+        return axios
+        .put('https://nuxtjs-blog-55a0d-default-rtdb.firebaseio.com/posts/' +
+            editedPost.id +
+            '.json', editedPost)
+        .then(res => {
+          vuexContext.commit('editPost', editedPost);
+        }).catch(e => console.log(e));
       },
       setPosts(vuexContext, posts) {
         vuexContext.commit('setPosts', posts);

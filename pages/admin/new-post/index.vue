@@ -16,11 +16,10 @@ export default {
   components: {AdminPostForm},
   methods: {
     onSubmitted(postData) {
-      axios.post('https://nuxtjs-blog-55a0d-default-rtdb.firebaseio.com/posts.json', {
-        ...postData,
-        updatedDate: new Date(),
-      }).then(result => console.log(result)).catch(e => console.log(e));
-    },
+      this.$store.dispatch('addPost', postData).then(() => {
+        this.$router.push('/admin');
+      });
+    }
   },
 };
 </script>
