@@ -5,6 +5,8 @@ const createStore = () => {
   return new Vuex.Store({
     state: {
       loadedPosts: [],
+      apiUrl: 'https://wb-blog.test',
+      title: 'Wb Blog',
     },
     mutations: {
       setPosts(state, posts) {
