@@ -11,23 +11,25 @@
 import PostList from "../components/Posts/PostList";
 export default {
   components: {PostList},
-  data() {
-    return {
-      loadedPosts: [
-        {
-          id: '1',
-          title: 'First Post',
-          previewText: 'This is our first post!',
-          thumbnail: 'https://m.buro247.kz/thumb/750x500_5/local/images/buro/new/high-tech-low-life-ili-kiberpank.gif'
-        }, {
-          id: '2',
-          title: 'Second Post',
-          previewText: 'This is our second post!',
-          thumbnail: 'https://m.buro247.kz/thumb/750x500_5/local/images/buro/new/high-tech-low-life-ili-kiberpank.gif'
-        }
-      ]
-    }
-  }
+  asyncData(context, callback) {
+    setTimeout(() => {
+      callback(null, {
+        loadedPosts: [
+          {
+            id: '1',
+            title: 'First Post',
+            previewText: 'This is our first post!',
+            thumbnail: 'https://m.buro247.kz/thumb/750x500_5/local/images/buro/new/high-tech-low-life-ili-kiberpank.gif'
+          }, {
+            id: '2',
+            title: 'Second Post',
+            previewText: 'This is our second post!',
+            thumbnail: 'https://m.buro247.kz/thumb/750x500_5/local/images/buro/new/high-tech-low-life-ili-kiberpank.gif'
+          }
+        ]
+      })
+    }, 1500)
+  },
 }
 </script>
 
