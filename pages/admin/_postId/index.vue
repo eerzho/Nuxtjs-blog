@@ -15,7 +15,7 @@ export default {
   layout: 'admin',
   components: {AdminPostForm},
   asyncData(context) {
-    return axios.get('https://nuxtjs-blog-55a0d-default-rtdb.firebaseio.com/posts/' + context.params.postId + '.json').then(res => {
+    return axios.get(process.env.baseUrl + '/posts/' + context.params.postId + '.json').then(res => {
       return {
         loadedPost: {...res.data, id: context.params.postId},
       };
@@ -28,6 +28,11 @@ export default {
       })
     },
   },
+  head() {
+    return {
+      title: process.env.siteName + ' - ' + this.loadedPost.title,
+    }
+  }
 };
 </script>
 

@@ -3,7 +3,7 @@
     <header class="the-header">
       <TheSideNavToggle @toggle="$emit('sidenavToggle')"/>
       <div class="logo">
-        <nuxt-link to="/">WD BLOG</nuxt-link>
+        <nuxt-link to="/">{{siteName}}</nuxt-link>
       </div>
       <div class="spacer"></div>
       <div class="navigation-items">
@@ -31,6 +31,11 @@ export default {
   components: {
     TheSideNavToggle,
   },
+  data() {
+    return {
+      siteName: process.env.siteName,
+    }
+  }
 };
 </script>
 

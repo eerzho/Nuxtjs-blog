@@ -11,6 +11,11 @@
 <script>
 export default {
   name: 'index',
+  head() {
+    return {
+      title: process.env.siteName + ' - About'
+    }
+  }
 };
 </script>
 

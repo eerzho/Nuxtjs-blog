@@ -57,5 +57,10 @@ module.exports = {
     extend(config, ctx) {
 
     }
+  },
+
+  env: {
+    baseUrl: process.env.BASE_URL || 'https://nuxtjs-blog-55a0d-default-rtdb.firebaseio.com',
+    siteName: process.env.SITE_NAME || 'WB Blog',
   }
 }

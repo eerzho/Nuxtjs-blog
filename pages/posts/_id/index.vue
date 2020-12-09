@@ -21,7 +21,7 @@ import axios from 'axios';
 export default {
   name: 'index',
   asyncData(context) {
-    return axios.get('https://nuxtjs-blog-55a0d-default-rtdb.firebaseio.com/posts/' + context.params.id + '.json').then(res => {
+    return axios.get(process.env.baseUrl + '/posts/' + context.params.id + '.json').then(res => {
       return {
         loadedPost: res.data,
       };
@@ -29,7 +29,7 @@ export default {
   },
   head() {
     return {
-      title: this.$store.state.title + '-' + this.loadedPost.title,
+      title: process.env.siteName + ' - ' + this.loadedPost.title,
     };
   }
 };

@@ -17,6 +17,11 @@ export default {
       return this.$store.getters.loadedPosts;
     },
   },
+  head() {
+    return {
+      title: process.env.siteName + ' - Main page',
+    }
+  }
 };
 </script>
 

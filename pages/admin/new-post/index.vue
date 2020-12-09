@@ -21,6 +21,11 @@ export default {
       });
     }
   },
+  head() {
+    return {
+      title: process.env.siteName + ' - Create a new post',
+    }
+  }
 };
 </script>
 
