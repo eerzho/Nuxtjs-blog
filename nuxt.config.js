@@ -3,6 +3,12 @@ const pkg = require('./package')
 module.exports = {
   mode: 'universal',
 
+  //Env variable
+  env: {
+    baseUrl: process.env.BASE_URL || 'https://nuxtjs-blog-55a0d-default-rtdb.firebaseio.com',
+    siteName: process.env.SITE_NAME || 'WB Blog',
+  },
+
   /*
   ** Headers of the page
   */
@@ -32,8 +38,13 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    // '~/assets/styles/main.css'
+    '~assets/styles/main.css'
   ],
+
+  transition: {
+    name: 'fade',
+    mode: 'out-in',
+  },
 
   /*
   ** Plugins to load before mounting the App
@@ -58,9 +69,4 @@ module.exports = {
 
     }
   },
-
-  env: {
-    baseUrl: process.env.BASE_URL || 'https://nuxtjs-blog-55a0d-default-rtdb.firebaseio.com',
-    siteName: process.env.SITE_NAME || 'WB Blog',
-  }
 }
