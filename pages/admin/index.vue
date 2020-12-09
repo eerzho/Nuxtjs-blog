@@ -12,12 +12,11 @@
 
 <script>
 import PostList from '../../components/Posts/PostList';
-import AppButton from '../../components/UI/AppButton';
 
 export default {
   name: 'index',
   layout: 'admin',
-  components: {AppButton, PostList},
+  components: {PostList},
   computed: {
     loadedPosts() {
       return this.$store.getters.loadedPosts;
