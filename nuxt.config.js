@@ -1,4 +1,5 @@
 const pkg = require('./package')
+const bodyParser = require('body-parser');
 
 module.exports = {
   mode: 'universal',
@@ -66,6 +67,11 @@ module.exports = {
     baseURL: process.env.BASE_URL || 'https://nuxtjs-blog-55a0d-default-rtdb.firebaseio.com',
     credentials: false,
   },
+
+  serverMiddleware: [
+    bodyParser.json(),
+    '~/api',
+  ],
 
   /*
   ** Build configuration
