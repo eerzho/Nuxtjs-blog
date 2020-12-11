@@ -16,6 +16,7 @@ import PostList from '../../components/Posts/PostList';
 export default {
   name: 'index',
   layout: 'admin',
+  middleware: ['check-auth', 'auth'],
   components: {PostList},
   computed: {
     loadedPosts() {

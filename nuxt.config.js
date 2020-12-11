@@ -7,6 +7,7 @@ module.exports = {
   env: {
     baseUrl: process.env.BASE_URL || 'https://nuxtjs-blog-55a0d-default-rtdb.firebaseio.com',
     siteName: process.env.SITE_NAME || 'WB Blog',
+    fbApiKey: 'AIzaSyCMXFsjap4ydaXmYcniRPbJ6XvDj2ACzCE',
   },
 
   /*
@@ -58,7 +59,13 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/axios',
   ],
+
+  axios: {
+    baseURL: process.env.BASE_URL || 'https://nuxtjs-blog-55a0d-default-rtdb.firebaseio.com',
+    credentials: false,
+  },
 
   /*
   ** Build configuration

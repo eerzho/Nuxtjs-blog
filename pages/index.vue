@@ -12,6 +12,7 @@ import PostList from '../components/Posts/PostList';
 
 export default {
   components: {PostList},
+  middleware: 'check-auth',
   computed: {
     loadedPosts() {
       return this.$store.getters.loadedPosts;
